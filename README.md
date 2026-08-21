@@ -42,7 +42,6 @@ src/
   types/        typage du contenu
   test/         setup Vitest
 assets/brand/   sources SVG du favicon et de l'image Open Graph
-img/            captures d'écran
 public/         polices, favicons, robots.txt, sitemap.xml, config serveur
 scripts/        génération des assets de marque, validation du build
 ```
