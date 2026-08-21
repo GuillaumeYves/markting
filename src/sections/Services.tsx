@@ -69,7 +69,7 @@ export function Services() {
                         />
                         <div className="min-w-0 flex-1">
                           <h3 className="subhead">{service.title}</h3>
-                          <p className="mt-3 max-w-prose leading-relaxed text-chalk-dim">
+                          <p className="mt-3 max-w-copy leading-relaxed text-chalk-dim">
                             {service.description}
                           </p>
                           <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2">

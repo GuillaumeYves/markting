@@ -41,7 +41,7 @@ export function Hero() {
         />
 
         <div className="mt-10 grid gap-10 border-t border-hair pt-10 lg:mt-12 lg:grid-cols-12 lg:gap-x-10">
-          <m.p {...rise(0.45)} className="lead max-w-prose text-chalk-dim lg:col-span-6">
+          <m.p {...rise(0.45)} className="lead max-w-copy text-chalk-dim lg:col-span-6">
             {site.name} réunit stratégie, image et acquisition sous une même direction. Une marque
             claire, des campagnes qui servent à quelque chose, une croissance que vous pouvez
             mesurer.

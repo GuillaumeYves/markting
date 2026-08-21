@@ -40,7 +40,7 @@ export function Method() {
                   />
                   <h3 className="text-2xl tracking-tighter lg:text-3xl">{step.title}</h3>
                   <p className="label mt-3">{step.duration}</p>
-                  <p className="mt-5 max-w-prose text-sm leading-relaxed text-chalk-dim">
+                  <p className="mt-5 max-w-copy text-sm leading-relaxed text-chalk-dim">
                     {step.description}
                   </p>
                 </Reveal>
