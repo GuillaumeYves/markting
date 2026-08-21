@@ -1,0 +1,13 @@
+Instrument Sans and Instrument Serif are licensed under the SIL Open Font License 1.1.
+
+Instrument Sans, Copyright 2022 The Instrument Sans Project Authors
+(https://github.com/Instrument/instrument-sans)
+
+Instrument Serif, Copyright 2022 The Instrument Serif Project Authors
+(https://github.com/Instrument/instrument-serif)
+
+The full licence text is available at https://openfontlicense.org
+
+The .woff2 files in this directory are the latin and latin-ext subsets published
+by Google Fonts, served from this origin so that no visitor request reaches a
+third-party host.
