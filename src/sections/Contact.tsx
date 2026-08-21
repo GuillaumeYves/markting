@@ -32,7 +32,7 @@ export function Contact() {
         </h2>
 
         <Reveal delay={0.2}>
-          <p className="lead mx-auto mt-10 max-w-prose text-void/70">
+          <p className="lead mx-auto mt-10 max-w-copy text-void/70">
             Trente minutes suffisent pour savoir si nous sommes le bon partenaire. Vous repartez
             avec un avis clair, même si la réponse est non.
           </p>

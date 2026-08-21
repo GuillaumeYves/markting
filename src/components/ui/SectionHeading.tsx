@@ -33,7 +33,7 @@ export function SectionHeading({
       {intro ? (
         <Reveal delay={0.1}>
           <p
-            className={`lead mt-7 max-w-prose ${centered ? "mx-auto" : ""} ${
+            className={`lead mt-7 max-w-copy ${centered ? "mx-auto" : ""} ${
               tone === "light" ? "text-void/70" : "text-chalk-dim"
             }`}
           >

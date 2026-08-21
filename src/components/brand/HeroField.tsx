@@ -138,7 +138,7 @@ export function HeroField() {
         </m.g>
       </svg>
 
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-void" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-b from-transparent to-void" />
     </div>
   );
 }
