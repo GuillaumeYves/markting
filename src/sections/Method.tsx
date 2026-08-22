@@ -12,6 +12,7 @@ export function Method() {
       <div className="shell py-24 lg:py-36">
         <SectionHeading
           headingId="method-title"
+          align="center"
           segments={[{ text: "Quatre étapes," }, { text: "rien de plus.", italic: true }]}
           intro="Un cadre court, tenu du premier échange jusqu'à la diffusion. Vous savez toujours où nous en sommes et ce qui vient ensuite."
         />

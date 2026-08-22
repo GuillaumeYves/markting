@@ -1,5 +1,5 @@
 import { m, useMotionValue, useReducedMotion, useSpring } from "framer-motion";
-import { useEffect, useId } from "react";
+import { useEffect, useId, type CSSProperties } from "react";
 import { MOTION_EASE } from "@/lib/motion";
 
 /** Growth curve, drawn as two cubics so the rise accelerates towards the end. */
@@ -16,6 +16,22 @@ const ARROW_ANGLE = -42;
 
 const GLOW_SPRING = { stiffness: 38, damping: 22, mass: 1.1 };
 const GLOW_SIZE = 720;
+
+/**
+ * How wide the drawing is allowed to get. `max()` is the width it needs to
+ * cover the section — its own width, or the width its 1200x760 ratio demands to
+ * fill a full-height one. `min()` is the cap: past ~1.5x the arrow and the
+ * markers stop reading as chart furniture and start reading as decoration, so
+ * on a very large display the curve settles instead of growing with the screen.
+ */
+const FIELD_WIDTH = "min(max(100vw, 158svh), 1800px)";
+const FIELD_HEIGHT = "calc(var(--field-width) * 760 / 1200)";
+/**
+ * The drawing stands on the floor of the section, and only recentres itself
+ * once it is taller than the section — otherwise a short window would push the
+ * arrow up behind the header.
+ */
+const FIELD_TOP = "max(calc(100% - var(--field-height)), calc((100% - var(--field-height)) / 2))";
 
 /**
  * The hero backdrop: a ruled grid, a rising curve that ends on an arrow, and a
@@ -57,7 +73,11 @@ export function HeroField() {
   });
 
   return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 overflow-hidden"
+      style={{ "--field-width": FIELD_WIDTH, "--field-height": FIELD_HEIGHT } as CSSProperties}
+    >
       <div
         className="absolute inset-0 opacity-60"
         style={{
@@ -75,10 +95,10 @@ export function HeroField() {
       />
 
       <svg
-        className="absolute inset-0 h-full w-full"
+        className="absolute right-0"
+        style={{ width: "var(--field-width)", aspectRatio: "1200 / 760", top: FIELD_TOP }}
         viewBox="0 0 1200 760"
         fill="none"
-        preserveAspectRatio="xMaxYMid slice"
       >
         <defs>
           {/* The curve fades out on the left so it never fights the headline. */}
@@ -92,8 +112,6 @@ export function HeroField() {
             <stop offset="1" stopColor="#3b5bff" stopOpacity="0" />
           </linearGradient>
         </defs>
-
-        <line x1="0" y1="700" x2="1200" y2="700" stroke="#26262b" strokeWidth="1" />
 
         <m.path
           d={CURVE_AREA}

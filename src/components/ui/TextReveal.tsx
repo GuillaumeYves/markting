@@ -27,6 +27,12 @@ const wordVariants = {
 /**
  * Reveals a headline word by word from behind a mask. Words are wrapped
  * individually so a headline can still wrap naturally at any width.
+ *
+ * The mask needs to clip below the word, but nowhere else: an italic serif
+ * leans past its own advance width, and an accent reaches above the tight
+ * display line-height. Both would land outside the box and be shaved off. The
+ * padding gives the ink somewhere to go and the matching negative margins take
+ * it straight back out of the layout, so spacing and line breaks are untouched.
  */
 export function TextReveal({
   segments,
@@ -72,7 +78,7 @@ export function TextReveal({
         {content.map(({ key, word, italic, breakBefore }) => (
           <span key={key}>
             {breakBefore ? <br aria-hidden="true" /> : null}
-            <span className="inline-block overflow-hidden pb-[0.14em] align-bottom">
+            <span className="-mt-[0.2em] -mr-[0.16em] inline-block overflow-hidden pt-[0.2em] pr-[0.16em] pb-[0.14em] align-bottom">
               <m.span
                 variants={wordVariants}
                 className={`inline-block ${italic ? "accent-italic" : ""}`}
