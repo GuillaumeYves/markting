@@ -1,7 +1,7 @@
 name: CI
 
-# Validation only. Nothing is published from here: the site is uploaded by hand,
-# so this workflow never needs a secret.
+# Validation only, and the source of the hand-uploaded bundle. Publishing lives
+# in pages.yml, so this workflow never needs a secret.
 on:
   push:
     branches:
