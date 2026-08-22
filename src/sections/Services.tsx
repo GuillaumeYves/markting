@@ -14,7 +14,10 @@ export function Services() {
     <section id="services" aria-labelledby="services-title" className="scroll-mt-24">
       <div className="shell py-24 lg:py-36">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-x-10">
-          <div className="lg:col-span-4">
+          {/* The heading stays first in the document, and moves to the right of
+              the list on a wide screen so the page does not run four sections
+              of copy-left, content-right in a row. */}
+          <div className="lg:col-span-4 lg:col-start-9 lg:row-start-1">
             <SectionHeading
               headingId="services-title"
               segments={[
@@ -25,7 +28,7 @@ export function Services() {
             />
           </div>
 
-          <div className="relative lg:col-span-7 lg:col-start-6">
+          <div className="relative lg:col-span-7 lg:col-start-1 lg:row-start-1">
             {/* The hovered discipline echoes behind the list, barely visible. */}
             <div
               aria-hidden="true"
